@@ -1,6 +1,6 @@
-package com.LucasVicentee.Controllers;
+package com.LucasVicentee.controllers;
 
-import com.LucasVicentee.Model.Greeting;
+import com.LucasVicentee.model.Greeting;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
