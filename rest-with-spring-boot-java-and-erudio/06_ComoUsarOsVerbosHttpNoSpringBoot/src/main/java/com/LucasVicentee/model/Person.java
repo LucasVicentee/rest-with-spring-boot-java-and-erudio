@@ -1,5 +1,8 @@
 package com.LucasVicentee.model;
 
+import com.LucasVicentee.PersonServices;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.io.Serializable;
 import java.util.Objects;
 
