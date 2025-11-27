@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: rest-with-spring-boot-java-and-erudio
+  datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/rest_with_spring_boot_java_erudio?useTimezone=true&serverTimezone=UTC
+      username: root
+      password: Co123456789
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        #dialect: org.hibernate.dialect.MySQLDialect A própia IDE pede para não deixar esta linha para evitar Warning
+    show-sql: false
+
+    open-in-view: false
