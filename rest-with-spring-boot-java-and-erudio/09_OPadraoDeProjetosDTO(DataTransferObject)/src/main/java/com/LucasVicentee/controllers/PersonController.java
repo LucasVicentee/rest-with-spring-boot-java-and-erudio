@@ -1,7 +1,7 @@
 package com.LucasVicentee.controllers;
 
+import com.LucasVicentee.data.dto.PersonDTO;
 import com.LucasVicentee.services.PersonServices;
-import com.LucasVicentee.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -18,22 +18,22 @@ public class PersonController {
     // private PersonServices service = new PersonServices(); o @AutoWired substitui a chamada antiga por uma nova, funcionando como a injeção de dependências
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE) // Especifica o que será realizado dentro do RequestMapping, isto é util quando há mais de um tipo diferente de requisição de API
-    public List<Person> findAll() {
+    public List<PersonDTO> findAll() {
         return service.findAll();
     }
 
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE) // Especifica o que será realizado dentro do RequestMapping, isto é util quando há mais de um tipo diferente de requisição de API
-    public Person findById(@PathVariable("id") Long id) {
+    public PersonDTO findById(@PathVariable("id") Long id) {
         return service.findById(id);
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE) // Especifica o que será realizado dentro do RequestMapping, isto é util quando há mais de um tipo diferente de requisição de API
-    public Person create(@RequestBody Person person) { // @RequestBody recupera os dados de um corpo para não retornar tudo nulo quando for adicionado algum dado
+    public PersonDTO create(@RequestBody PersonDTO person) { // @RequestBody recupera os dados de um corpo para não retornar tudo nulo quando for adicionado algum dado
         return service.create(person);
     }
 
     @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE) // Especifica o que será realizado dentro do RequestMapping, isto é util quando há mais de um tipo diferente de requisição de API
-    public Person update(@RequestBody Person person) { // @RequestBody recupera os dados de um corpo para não retornar tudo nulo quando for adicionado algum dado
+    public PersonDTO update(@RequestBody PersonDTO person) { // @RequestBody recupera os dados de um corpo para não retornar tudo nulo quando for adicionado algum dado
         return service.update(person);
     }
 
