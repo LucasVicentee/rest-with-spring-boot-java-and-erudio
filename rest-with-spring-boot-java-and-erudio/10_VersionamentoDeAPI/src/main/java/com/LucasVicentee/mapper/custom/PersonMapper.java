@@ -7,10 +7,11 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 
 @Service
-public class PersonMapper { // Converte de um tipo para outro
+public class PersonMapper { // Converte de um tipo para outro de entity para DTO e DTO para entity
 
     public PersonDTOV2 convertEntityToDTO(Person person) {
         PersonDTOV2 dto = new PersonDTOV2();
+        dto.setId(person.getId());
         dto.setFirstName(person.getFirstName());
         dto.setLastName(person.getLastName());
         dto.setBirthDay(new Date());
@@ -21,6 +22,7 @@ public class PersonMapper { // Converte de um tipo para outro
 
     public Person convertDTOToEntity(PersonDTOV2 person) {
         Person entity = new Person();
+        entity.setId(person.getId());
         entity.setFirstName(person.getFirstName());
         entity.setLastName(person.getLastName());
         //entity.setBirthDay(new Date());

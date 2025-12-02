@@ -33,7 +33,7 @@ public class PersonController {
         return service.create(person);
     }
 
-    @PostMapping(name = "/v2", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE) // Especifica o que será realizado dentro do RequestMapping, isto é util quando há mais de um tipo diferente de requisição de API
+    @PostMapping(value = "/v2", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE) // Especifica o que será realizado dentro do RequestMapping, isto é util quando há mais de um tipo diferente de requisição de API
     public PersonDTOV2 create(@RequestBody PersonDTOV2 person) { // @RequestBody recupera os dados de um corpo para não retornar tudo nulo quando for adicionado algum dado
         return service.createV2(person);
     }
