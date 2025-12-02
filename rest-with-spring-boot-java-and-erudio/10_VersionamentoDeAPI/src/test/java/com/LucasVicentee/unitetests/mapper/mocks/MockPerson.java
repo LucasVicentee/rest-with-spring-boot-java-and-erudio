@@ -3,7 +3,7 @@ package com.LucasVicentee.unitetests.mapper.mocks;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.LucasVicentee.data.dto.PersonDTO;
+import com.LucasVicentee.data.dto.v1.PersonDTO;
 import com.LucasVicentee.model.Person;
 
 public class MockPerson {
