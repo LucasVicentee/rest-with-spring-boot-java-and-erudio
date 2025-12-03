@@ -8,7 +8,7 @@ spring:
       password: Co123456789
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     properties:
       hibernate:
         #dialect: org.hibernate.dialect.MySQLDialect A própia IDE pede para não deixar esta linha para evitar Warning
