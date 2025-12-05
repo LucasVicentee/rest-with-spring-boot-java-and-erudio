@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 
 import com.LucasVicentee.model.Person;
 
-public class ObjectMapperTests {
+public class ObjectMapperConfigTests {
     MockPerson inputObject;
 
     @BeforeEach
