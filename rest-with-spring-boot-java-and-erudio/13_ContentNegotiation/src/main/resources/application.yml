@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: rest-with-spring-boot-java-and-erudio
+  datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/rest_with_spring_boot_java_erudio?useTimezone=true&serverTimezone=UTC
+      username: root
+      password: Co123456789
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        #dialect: org.hibernate.dialect.MySQLDialect A própia IDE pede para não deixar esta linha para evitar Warning
+    show-sql: false
+
+    open-in-view: false
+logging:
+  level:
+    #root: WARN
+    com.LucasVicentee: DEBUG
+    #TRACE (Nível de Log mais detalhado, mostrando passo a passo o que está acontecendo na aplicação toda)
+    #DEBUG (Muito usado em desenvolvimento, porém não é bom para produção por gastar muito recurso)
+    #INFO (Mostra informações normais da aplicação e é DEFAULT)
+    #WARNING (Mostra alertas que podem estar acontecendo na aplicação e é o nível mais ideal para produção)
+    #ERROR (Algo que requer atenção e deve conferir quando começa acontecer este tipo de Log)
