@@ -17,7 +17,7 @@ public class ObjectMapper {
     public static <O, D> List<D> parseListObjects(List<O> origin, Class<D> destination) {
         List<D> destinationObjects = new ArrayList<>();
         for (Object o : origin) {
-            destinationObjects.add(mapper.map(o, destination));
+            destinationObjects.add(mapper.map(origin, destination));
         }
 
         return destinationObjects;

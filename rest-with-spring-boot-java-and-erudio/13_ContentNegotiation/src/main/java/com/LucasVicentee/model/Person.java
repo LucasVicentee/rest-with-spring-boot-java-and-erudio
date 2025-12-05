@@ -7,7 +7,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "person")
-public class Person implements Serializable { // Classe feita para criar a entidade
+public class Person implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
