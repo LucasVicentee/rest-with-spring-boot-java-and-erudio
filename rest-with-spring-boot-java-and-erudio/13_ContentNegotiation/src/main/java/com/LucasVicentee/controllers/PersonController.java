@@ -7,6 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.print.attribute.standard.Media;
 import java.util.List;
 
 @RestController
@@ -17,22 +18,22 @@ public class PersonController {
     private PersonServices service;
     // private PersonServices service = new PersonServices(); o @AutoWired substitui a chamada antiga por uma nova, funcionando como a injeção de dependências
 
-    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE) // Especifica o que será realizado dentro do RequestMapping, isto é util quando há mais de um tipo diferente de requisição de API
+    @GetMapping(produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_YAML_VALUE}) // Especifica o que será realizado dentro do RequestMapping, isto é util quando há mais de um tipo diferente de requisição de API
     public List<PersonDTO> findAll() {
         return service.findAll();
     }
 
-    @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE) // Especifica o que será realizado dentro do RequestMapping, isto é util quando há mais de um tipo diferente de requisição de API
+    @GetMapping(value = "/{id}", produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_YAML_VALUE}) // Especifica o que será realizado dentro do RequestMapping, isto é util quando há mais de um tipo diferente de requisição de API
     public PersonDTO findById(@PathVariable("id") Long id) {
         return service.findById(id);
     }
 
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE) // Especifica o que será realizado dentro do RequestMapping, isto é util quando há mais de um tipo diferente de requisição de API
+    @PostMapping(consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_YAML_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_YAML_VALUE}) // Especifica o que será realizado dentro do RequestMapping, isto é util quando há mais de um tipo diferente de requisição de API
     public PersonDTO create(@RequestBody PersonDTO person) { // @RequestBody recupera os dados de um corpo para não retornar tudo nulo quando for adicionado algum dado
         return service.create(person);
     }
 
-    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE) // Especifica o que será realizado dentro do RequestMapping, isto é util quando há mais de um tipo diferente de requisição de API
+    @PutMapping(consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_YAML_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_YAML_VALUE}) // Especifica o que será realizado dentro do RequestMapping, isto é util quando há mais de um tipo diferente de requisição de API
     public PersonDTO update(@RequestBody PersonDTO person) { // @RequestBody recupera os dados de um corpo para não retornar tudo nulo quando for adicionado algum dado
         return service.update(person);
     }
