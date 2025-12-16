@@ -24,3 +24,7 @@ logging:
     #INFO (Mostra informações normais da aplicação e é DEFAULT)
     #WARNING (Mostra alertas que podem estar acontecendo na aplicação e é o nível mais ideal para produção)
     #ERROR (Algo que requer atenção e deve conferir quando começa acontecer este tipo de Log)
+spring-doc:
+  paths-to-match: /api/**/v1/**
+  swagger-ui:
+    use-root-path: true
