@@ -1,1 +1,32 @@
-spring.application.name=rest-with-spring-boot-java-and-erudio
+# Arquivo: src/test/resources/application-test.yml
+
+# Configuração do Banco de Dados em Memória (H2) para Testes
+spring:
+  datasource:
+    # Use o driver H2 e configure a URL como um banco de dados em memória.
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password: ''
+  
+  # Configurações do JPA para trabalhar com o H2 nos testes
+  jpa:
+    hibernate:
+      # Cria/atualiza o esquema do banco de dados automaticamente para os testes
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+    show-sql: false
+
+  # DESABILITA o Flyway para evitar que ele tente rodar migrations no banco de dados H2.
+  flyway:
+    enabled: false
+
+  application:
+    name: rest-with-spring-boot-java-and-erudio
+
+# Você também pode redefinir o logging para ser mais silencioso nos testes, se desejar.
+logging:
+  level:
+    com.LucasVicentee: WARN
